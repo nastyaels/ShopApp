@@ -9,7 +9,7 @@ internal class CakeService (
     ){
     suspend fun getCakes(): Response<CakeListNet> {
         println("ok")
-        return apiService.getGakes()
+        return apiService.getCakes()
     }
     suspend fun getCakeById(id: Long):Response<CakeInfoNet> = apiService.getCakeById(id)
 }

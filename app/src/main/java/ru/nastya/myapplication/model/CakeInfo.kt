@@ -8,7 +8,7 @@ data class CakeInfo (
     val image: String,
     val price: Double?,
     val weight: Double?,
-    val ingredients: String
+    val ingredients: String?
 
 ) {
     companion object {

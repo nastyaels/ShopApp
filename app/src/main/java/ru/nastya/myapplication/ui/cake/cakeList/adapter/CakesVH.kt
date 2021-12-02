@@ -19,8 +19,8 @@ internal class CakesVH(private val binding: ItemCakesVhBinding) : RecyclerView.V
             cakePrice.text="${cakesVM.cake.price.toString()} $"
             Picasso.get()
                 .load("http://192.168.0.103:8080/${cakesVM.cake.image}")
-                .placeholder(R.drawable.ic_baseline_cake_24)
-                .error(R.drawable.ic_baseline_cake_24)
+                .placeholder(R.drawable.ic_baseline_cake)
+                .error(R.drawable.ic_baseline_cake)
                 .into(cakeImage)
         }
     }

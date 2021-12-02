@@ -15,8 +15,8 @@ import ru.nastya.myapplication.model.CakeInfo
 
 @BindingAdapter("app:picasso")
 fun image(view: ImageView, path: String?){
-    Picasso.get().load("http://192.168.0.103:8080/${path}").placeholder(R.drawable.ic_baseline_cake_24)
-        .error(R.drawable.ic_baseline_cake_24)
+    Picasso.get().load("http://192.168.0.103:8080/${path}").placeholder(R.drawable.ic_baseline_cake)
+        .error(R.drawable.ic_baseline_cake)
         .into(view)
 }
 
@@ -66,7 +66,7 @@ class CakeInfoViewModel(application: Application) : AndroidViewModel(application
 
     val ingredientsObs = object:ObservableField<String>() {
         override fun get(): String? {
-            return "Ingredients:\n${cakeInfo.ingredients}"
+            return "Ingredients: \n${cakeInfo.ingredients}"
         }
     }
 

@@ -13,10 +13,11 @@ class CakesRepositoryNet (
     private val defaultDispatcher: CoroutineDispatcher = Dispatchers.IO
     ) {
     private val cakeService = AppNetwork.cakeService
+
     suspend fun cakeList(): List<Cake> = withContext(defaultDispatcher){
         val response = cakeService.getCakes()
         val cakeList = if(response.isSuccessful){
-            response.body()?.cakeNetList ?: listOf()
+            response.body()?.cake_list ?: listOf()
         } else listOf()
 
         cakeList.map {
@@ -26,11 +27,11 @@ class CakesRepositoryNet (
         }
     }
 
-    suspend fun cake(id:Long): CakeInfo = withContext(defaultDispatcher){
+    suspend fun cake(id: Long): CakeInfo = withContext(defaultDispatcher){
         val response = cakeService.getCakeById(id)
         val cake = if(response.isSuccessful){
-            response.body() ?: CakeInfoNet.emptyCakeInfo()
-        } else CakeInfoNet.emptyCakeInfo()
+            response.body() ?: CakeInfoNet.emptyCakeInfoNet()
+        } else CakeInfoNet.emptyCakeInfoNet()
         var cakeInfo: CakeInfo
         cake.apply {
             cakeInfo = CakeInfo(id,name,calories?.toDouble(),image,price?.toDouble(),weight?.toDouble(),ingredients)

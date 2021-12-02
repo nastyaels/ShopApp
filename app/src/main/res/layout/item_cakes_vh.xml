@@ -8,14 +8,18 @@
             type="ru.nastya.myapplication.ui.cake.cakeList.adapter.CakesVM" />
     </data>
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
-        app:cardCornerRadius="8dp">
+        app:cardCornerRadius="20dp"
+        android:padding="1dp"
+        app:cardMaxElevation="15dp"
+        app:cardElevation="10dp"
+        app:contentPadding="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="10dp"
             android:onClick="@{() -> viewModel.onClick()}"
@@ -32,7 +36,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cake_name" />
 
             <TextView
-                android:textStyle="bold|italic"
+                android:textStyle="normal|bold"
                 android:id="@+id/cake_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -48,7 +52,7 @@
                 android:layout_marginTop="10dp"
                 android:textAlignment="textStart"
                 android:text="weight"
-                app:layout_constraintEnd_toStartOf="@id/cake_calories"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cake_image" />
 
@@ -57,17 +61,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textAlignment="textEnd"
                 android:text="calories"
+                android:textAlignment="textEnd"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cake_weight"
-                app:layout_constraintTop_toBottomOf="@id/cake_image" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cake_weight" />
 
             <TextView
                 android:id="@+id/cake_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="price"
                 android:textAlignment="textEnd"
                 app:layout_constraintEnd_toEndOf="parent"

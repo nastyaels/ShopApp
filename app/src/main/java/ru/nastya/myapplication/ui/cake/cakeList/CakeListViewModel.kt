@@ -24,9 +24,7 @@ class CakeListViewModel(application: Application) : AndroidViewModel(application
 
     private fun loadCakes(){
         viewModelScope.launch {
-            cakes.postValue(cakesRepositoryNet.cakeList().map {
-                CakesVM(getApplication<App>(),it)
-            })
+            cakes.postValue(cakesRepositoryNet.cakeList().map { CakesVM(getApplication<App>(), it) })
         }
     }
 

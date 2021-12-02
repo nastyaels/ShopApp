@@ -1,5 +1,6 @@
 package ru.nastya.myapplication.ui.cake.cakeList.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ internal class CakesAdapter : RecyclerView.Adapter<CakesVH>() {
 
     private var cakes = mutableListOf<CakesVM>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun reload(newCakes: List<CakesVM>){
         cakes.clear()
         cakes.addAll(newCakes)

@@ -10,16 +10,16 @@ import ru.nastya.myapplication.data.network.services.CakeServiceApi
 internal object AppNetwork {
     private val gson = GsonBuilder().create()
 
-    private val client = OkHttpClient().newBuilder().build()
+    private val okHttpClient= OkHttpClient().newBuilder().build()
 
     private val retrofit = Retrofit.Builder()
-        .client(client)
+        .client(okHttpClient)
         .baseUrl("http://192.168.0.103:8080/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
-    val cakeService by lazy {
-        val cakeServiceApi = retrofit.create(CakeServiceApi::class.java)
-        CakeService(cakeServiceApi)
+    val cakeService by lazy{
+        val cakesServiceApi = retrofit.create(CakeServiceApi::class.java)
+        CakeService(cakesServiceApi)
     }
 }

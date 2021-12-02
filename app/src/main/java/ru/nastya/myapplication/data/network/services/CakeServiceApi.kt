@@ -8,7 +8,7 @@ import ru.nastya.myapplication.data.network.model.CakeListNet
 
 internal interface CakeServiceApi {
     @GET("cakes")
-    suspend fun getGakes(): Response<CakeListNet>
+    suspend fun getCakes(): Response<CakeListNet>
 
     @GET("cake/{id}")
     suspend fun getCakeById(@Path("id") id:Long) : Response<CakeInfoNet>

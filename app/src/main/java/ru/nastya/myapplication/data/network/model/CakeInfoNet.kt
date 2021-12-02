@@ -13,10 +13,10 @@ data class CakeInfoNet (
 
 ) {
     companion object {
-        fun emptyCakeInfo() = CakeInfoNet(
+        fun emptyCakeInfoNet() = CakeInfoNet(
             null,
             "", null,
-            "", null, null,""
+            "", null, null, ""
         )
     }
 }
